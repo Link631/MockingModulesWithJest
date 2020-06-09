@@ -1,0 +1,103 @@
+{
+    "name": "mocking_with_jest",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@fluentui/react": "^7.118.1",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "@types/node": "^12.12.46",
+        "@types/react": "^16.9.35",
+        "@types/react-dom": "^16.9.8",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "3.4.1",
+        "typescript": "^3.7.5"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "jest",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/enzyme": "^3.10.5",
+        "@types/enzyme-adapter-react-16": "^1.0.6",
+        "@types/jest": "^24.9.1",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.2",
+        "ts-jest": "^26.1.0"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "moduleNameMapper": {
+            "office-ui-fabric-react/lib/(.*)$": "office-ui-fabric-react/lib-commonjs/$1",
+            "\\.(css|less|scss|sass)$": "<rootDir>/objectProxy/scss-to-js-proxy"
+        },
+        "preset": "ts-jest",
+        "collectCoverage": false,
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx}",
+            "!src/api/*.ts",
+            "!src/Commands/*.ts",
+            "!src/Decorators/*.ts",
+            "!scr/logging/*.ts",
+            "!src/setupEnzyme.ts",
+            "!src/index.tsx",
+            "!src/react-app-env.d.ts",
+            "!src/serviceWorker.ts",
+            "!src/Provider/WindowConfigurationProvider.ts",
+            "!src/decorators/logging.ts",
+            "!src/decorators/catchError.ts",
+            "!src/decorators/LogLevel.ts",
+            "!src/provider/*.ts",
+            "!src/components/MockConfiguration/*.*"
+        ],
+        "coverageReporters": [
+            "json-summary",
+            "lcov",
+            "text"
+        ],
+        "reporters": [
+            "default"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 86,
+                "functions": 96,
+                "lines": 98,
+                "statements": 98
+            }
+        },
+        "coverageDirectory": "<rootDir>/jest",
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/setupTests.ts"
+        ],
+        "transform": {
+            "^.+\\.(ts|tsx)$": "ts-jest"
+        },
+        "testMatch": [
+            "**/src/**/*.test.+(ts|tsx|js)"
+        ]
+    }
+}
